@@ -10,7 +10,7 @@ namespace RPGui.GameStuff.Character {
         Dragon,
         Butterfly
     }
-    internal class Enemy : Character {
+    public class Enemy : Character {
         public Species species { get; set; }
         public Enemy(Species species) { 
             this.species = species;

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RPGui.GameStuff.Character;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,8 +11,13 @@ using System.Windows.Forms;
 
 namespace RPGui {
     public partial class Form3 : Form {
-        public Form3() {
+        Player player;
+        Enemy enemy;
+        public Form3(Player player, Enemy enemy) {
             InitializeComponent();
+            this.player = player;
+            this.enemy = enemy;
         }
+
     }
 }

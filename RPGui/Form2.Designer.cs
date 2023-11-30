@@ -127,10 +127,9 @@
             // 
             // ltext
             // 
-            this.ltext.AutoSize = true;
             this.ltext.Location = new System.Drawing.Point(6, 22);
             this.ltext.Name = "ltext";
-            this.ltext.Size = new System.Drawing.Size(51, 20);
+            this.ltext.Size = new System.Drawing.Size(188, 128);
             this.ltext.TabIndex = 0;
             this.ltext.Text = "label3";
             // 
@@ -168,7 +167,6 @@
             this.gbPlayer.ResumeLayout(false);
             this.gbPlayer.PerformLayout();
             this.gbEnemy.ResumeLayout(false);
-            this.gbEnemy.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pPlayer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pEnemy)).EndInit();
             this.ResumeLayout(false);

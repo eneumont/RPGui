@@ -17,14 +17,15 @@ namespace RPGui {
         Dialogue dialogue;
         Response response;
         RadioButton[] radioButtons;
-        bool loop = true;
+        int dia = 1;
+        Dialogue[] conversation;
+
+
         public Form2(Player player) {
             InitializeComponent();
             this.player = player;
             setup();
-            while (loop) {
-                showDialogue();
-            }
+            showDialogue();
         }
 
         public void setup() {
@@ -96,11 +97,6 @@ namespace RPGui {
         }
 
         private Dialogue jesterDialogue() {
-            //Response begin = new Response {
-            //    responseText = "You're in a circus watching a stellar performance " +
-            //    "when the main attraction Jacob Church shines the spotlight on you!",
-            //    dialogueOptions = new string[] { "...", "Who?!" }
-            //};
             Response referenceStart = new Response();
 
             Response jokeStart = new Response();
@@ -153,7 +149,9 @@ namespace RPGui {
                 puzzleStart
                 );
 
+            //Dialogue start = new Dialogue { dialogueStart = begin };
             Dialogue start = new Dialogue { dialogueStart = begin };
+            dialogue = start;
             return start;
         }
 
@@ -173,44 +171,25 @@ namespace RPGui {
 
         private void showDialogue() {
             //ltext.Text = dialogue.dialogueStart.responseText;
-            //Response response = dialogue.dialogueStart;
-            ltext.Text = dialogue.dialogueStart.responseText;
-            response = dialogue.dialogueStart;
+            //response = dialogue.dialogueStart;
+            ltext.Text = response.responseText;
+            response = response;
 
-            if (response.playerOptions != null) { 
-                for (int i = 0; i < response.playerOptions.Length; i++) {
-                    radioButtons[i].Text = response.playerOptions[i];
-                }
+            for (int i = 0; i < response.dialogueOptions.Keys.ToArray().Length; i++) {
+                radioButtons[i].Text = response.dialogueOptions.Keys.ToArray()[i];
             }
+        }
 
-            //while (response.playerOptions != null && response.playerOptions.Length > 0) {
-            //    // Display player options
-            //    for (int i = 0; i < response.playerOptions.Length; i++) {
-            //        radioButtons[i].Text = response.playerOptions[i];
-            //    }
-
-            //    // Get user input
-            //    int choice = GetUserChoice(currentResponse.playerOptions.Length);
-
-            //    // Get the next response based on the user's choice
-            //    string selectedOption = currentResponse.playerOptions[choice - 1];
-            //    if (currentResponse.dialogueOptions.TryGetValue(selectedOption, out Response nextResponse))
-            //    {
-            //        Console.WriteLine(nextResponse.responseText);
-            //        currentResponse = nextResponse;
-            //    }
-            //    else
-            //    {
-            //        Console.WriteLine("Invalid option. Exiting dialogue.");
-            //        break;
-            //    }
-            //}
+        private void nextDialogue() { 
+        
         }
 
         private void bConfirm_Click(object sender, EventArgs e) {
             for (int i = 0; i < radioButtons.Length; i++) {
-                if (radioButtons[i].Checked && radioButtons[i].Text != "") { 
-                    
+                if (radioButtons[i].Checked && radioButtons[i].Text != "") {
+                    response = response.dialogueOptions[radioButtons[i].Text];
+                    showDialogue();
+                    break;
                 }
             }
         }
