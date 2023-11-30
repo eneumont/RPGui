@@ -122,10 +122,30 @@ namespace RPGui {
                 );
 
             Response referenceSecond = new Response();
+            referenceSecond.responseText = "No";
+            referenceSecond.dialogueOptions.Add(
+                "Yes",
+                fight4
+                );
 
-            Response referenceStart = new Response();
+            Response jokeSecond = new Response();
+            jokeSecond.responseText = "Wow, that really hurt my feelings. Imma go cry now. " +
+                "He leaves the stage in tears as the rest of the crowd boos you until you leave.";
+            jokeSecond.dialogueOptions.Add(
+                "Go home (end)",
+                null
+                );
 
             Response jokeStart = new Response();
+            jokeStart.responseText = "Cause why not?";
+            jokeStart.dialogueOptions.Add(
+                "Cause, that's my name!",
+                referenceSecond
+                );
+            jokeStart.dialogueOptions.Add(
+                "Cause, it sucks.",
+                jokeSecond
+                );
 
             Response puzzleThird = new Response();
             puzzleThird.responseText = "Then why are you here?";
@@ -155,6 +175,17 @@ namespace RPGui {
                 puzzleThird
                 );
 
+            Response referenceStart = new Response();
+            referenceStart.responseText = "No I'm not...";
+            referenceStart.dialogueOptions.Add(
+                "Yes you are!",
+                referenceSecond
+                );
+            referenceStart.dialogueOptions.Add(
+                "Oh my bad carry on",
+                puzzleSecond
+                );
+
             Response puzzleStart = new Response();
             puzzleStart.responseText = "The jester looks at you in disgust. " +
                 "Jacob Church head of the circus you're currently attending? " +
@@ -174,7 +205,19 @@ namespace RPGui {
                     );
             }
 
+            Response silentThird = new Response();
+            silentThird.responseText = "...";
+            silentThird.dialogueOptions.Add(
+                "...",
+                fight4
+                );
+
             Response silentSecond = new Response();
+            silentSecond.responseText = "You know eventually you'll have to say something.";
+            silentSecond.dialogueOptions.Add(
+                "...",
+                silentThird
+                );
 
             Response silentStart = new Response();
             silentStart.responseText = "C'mon don't be shy. I got a special gift just for you!";
@@ -222,6 +265,12 @@ namespace RPGui {
             }
         }
 
+        private void clearDialogue() {
+            for (int i = 0; i < radioButtons.Length; i++) {
+                radioButtons[i].Text = "";
+            }
+        }
+
         private void bConfirm_Click(object sender, EventArgs e) {
             for (int i = 0; i < radioButtons.Length; i++) {
                 if (radioButtons[i].Checked && radioButtons[i].Text != "") {
@@ -232,8 +281,11 @@ namespace RPGui {
                         form.FormClosing += delegate { Close(); };
                         form.Show();
                         Hide();
+                    } else if (radioButtons[i].Text.ToLower().Contains("end")) {
+                        Close();
                     } else {
                         response = response.dialogueOptions[radioButtons[i].Text];
+                        clearDialogue();
                         showDialogue();
                         break;
                     }
