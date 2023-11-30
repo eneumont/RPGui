@@ -72,7 +72,6 @@
     <Compile Include="GameStuff\Character\NonPlayableCharacter.cs" />
     <Compile Include="GameStuff\Character\Player.cs" />
     <Compile Include="GameStuff\Character\Skill.cs" />
-    <Compile Include="GameStuff\Dialogue\Dialogue.cs" />
     <Compile Include="GameStuff\Dialogue\Response.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

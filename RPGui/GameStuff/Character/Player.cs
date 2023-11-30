@@ -19,12 +19,10 @@ namespace RPGui.GameStuff.Character {
         public Job job { get; }
         Item[] inventory;
         Skill[] skills;
-        
         public Player(Job job) {
             this.job = job;
             setStats();
         }
-
         private void setStats() { 
             switch (job) {
                 case Job.Warrior:
@@ -118,6 +116,10 @@ namespace RPGui.GameStuff.Character {
                     name = "Trickster";
                     break;
             }
+        }
+
+        public void playerTurn() { 
+        
         }
     }
 }

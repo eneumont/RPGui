@@ -18,6 +18,7 @@ namespace RPGui.GameStuff.Character {
         public int dodge { get; set; }
         public int health { get; set; }
         public String name { get; set; }
+        public String action { get; set; }
         public bool complete = false;
 
         public Character() { 

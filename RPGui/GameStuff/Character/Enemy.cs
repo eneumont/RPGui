@@ -30,5 +30,9 @@ namespace RPGui.GameStuff.Character {
                     break;
             }
         }
+
+        public void enemyTurn() { 
+        
+        }
     }
 }
