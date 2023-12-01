@@ -44,12 +44,19 @@
             this.bSkill = new System.Windows.Forms.Button();
             this.bDefend = new System.Windows.Forms.Button();
             this.bAttack = new System.Windows.Forms.Button();
+            this.gPHealth = new System.Windows.Forms.GroupBox();
+            this.lPSpecial = new System.Windows.Forms.Label();
+            this.lPHealth = new System.Windows.Forms.Label();
+            this.gEHealth = new System.Windows.Forms.GroupBox();
+            this.lEHealth = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pPlayer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pEnemy)).BeginInit();
             this.gCommands.SuspendLayout();
             this.gSkill3.SuspendLayout();
             this.gSkill2.SuspendLayout();
             this.gSkill1.SuspendLayout();
+            this.gPHealth.SuspendLayout();
+            this.gEHealth.SuspendLayout();
             this.SuspendLayout();
             // 
             // lPlayerAction
@@ -251,11 +258,64 @@
             this.bAttack.UseVisualStyleBackColor = true;
             this.bAttack.Click += new System.EventHandler(this.bAttack_Click);
             // 
+            // gPHealth
+            // 
+            this.gPHealth.Controls.Add(this.lPHealth);
+            this.gPHealth.Controls.Add(this.lPSpecial);
+            this.gPHealth.Location = new System.Drawing.Point(442, 137);
+            this.gPHealth.Name = "gPHealth";
+            this.gPHealth.Size = new System.Drawing.Size(200, 168);
+            this.gPHealth.TabIndex = 10;
+            this.gPHealth.TabStop = false;
+            this.gPHealth.Text = "groupBox1";
+            // 
+            // lPSpecial
+            // 
+            this.lPSpecial.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lPSpecial.Location = new System.Drawing.Point(6, 99);
+            this.lPSpecial.Name = "lPSpecial";
+            this.lPSpecial.Size = new System.Drawing.Size(188, 56);
+            this.lPSpecial.TabIndex = 1;
+            this.lPSpecial.Text = "label2";
+            this.lPSpecial.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lPHealth
+            // 
+            this.lPHealth.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lPHealth.Location = new System.Drawing.Point(6, 34);
+            this.lPHealth.Name = "lPHealth";
+            this.lPHealth.Size = new System.Drawing.Size(188, 56);
+            this.lPHealth.TabIndex = 2;
+            this.lPHealth.Text = "label1";
+            this.lPHealth.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // gEHealth
+            // 
+            this.gEHealth.Controls.Add(this.lEHealth);
+            this.gEHealth.Location = new System.Drawing.Point(742, 137);
+            this.gEHealth.Name = "gEHealth";
+            this.gEHealth.Size = new System.Drawing.Size(200, 105);
+            this.gEHealth.TabIndex = 11;
+            this.gEHealth.TabStop = false;
+            this.gEHealth.Text = "groupBox2";
+            // 
+            // lEHealth
+            // 
+            this.lEHealth.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lEHealth.Location = new System.Drawing.Point(6, 34);
+            this.lEHealth.Name = "lEHealth";
+            this.lEHealth.Size = new System.Drawing.Size(188, 56);
+            this.lEHealth.TabIndex = 2;
+            this.lEHealth.Text = "label3";
+            this.lEHealth.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1384, 815);
+            this.Controls.Add(this.gEHealth);
+            this.Controls.Add(this.gPHealth);
             this.Controls.Add(this.gCommands);
             this.Controls.Add(this.lEnemy);
             this.Controls.Add(this.lEnemyAction);
@@ -271,6 +331,8 @@
             this.gSkill3.ResumeLayout(false);
             this.gSkill2.ResumeLayout(false);
             this.gSkill1.ResumeLayout(false);
+            this.gPHealth.ResumeLayout(false);
+            this.gEHealth.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -297,5 +359,10 @@
         private System.Windows.Forms.GroupBox gSkill2;
         private System.Windows.Forms.Label lSkill2;
         private System.Windows.Forms.Button bSkill2;
+        private System.Windows.Forms.GroupBox gPHealth;
+        private System.Windows.Forms.Label lPHealth;
+        private System.Windows.Forms.Label lPSpecial;
+        private System.Windows.Forms.GroupBox gEHealth;
+        private System.Windows.Forms.Label lEHealth;
     }
 }
