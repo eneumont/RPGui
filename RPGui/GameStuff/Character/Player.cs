@@ -118,8 +118,10 @@ namespace RPGui.GameStuff.Character {
             }
         }
 
-        public void playerTurn() { 
-        
+        public void playerTurn() {
+            while (!complete) { 
+                
+            }
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RPGui.GameStuff.Character {
     internal interface ICharacter {
-        void attack();
+        void attack(Character character);
 
         void defend();
 

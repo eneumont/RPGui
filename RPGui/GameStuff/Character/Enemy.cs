@@ -32,7 +32,19 @@ namespace RPGui.GameStuff.Character {
         }
 
         public void enemyTurn() { 
-        
+            Random r = new Random();
+            int c = r.Next(4) + 1;
+            switch (c) {
+                case 1:
+                    attack();
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+            }
         }
     }
 }
