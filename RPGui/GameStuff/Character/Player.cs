@@ -22,7 +22,7 @@ namespace RPGui.GameStuff.Character {
             this.job = job;
             setStats();
         }
-        private void setStats() { 
+        private void setStats() {
             switch (job) {
                 case Job.Warrior:
                     might = 11;

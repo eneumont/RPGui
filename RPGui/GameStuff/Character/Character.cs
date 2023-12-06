@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RPGui.GameStuff.Dialogue;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,8 +22,8 @@ namespace RPGui.GameStuff.Character {
         public string action { get; set; }
         public bool complete = false;
         public bool defending = false;
-        Skill[] skills;
-        public int damage { get; set; }
+        public int damage = 0;
+        protected Skill[] skills = new Skill[3];
 
         public void attack(int d, int r, bool g, string n) {
             if (hit()) {
