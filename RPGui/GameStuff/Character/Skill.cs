@@ -9,6 +9,8 @@ namespace RPGui.GameStuff.Character {
         public string Name { get; set; }
         public string Description { get; set; }
         public int cost { get; set; }
+
+        public Skill() { }
     
     }
 }

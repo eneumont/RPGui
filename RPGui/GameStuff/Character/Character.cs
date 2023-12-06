@@ -17,32 +17,44 @@ namespace RPGui.GameStuff.Character {
         public int speed { get; set; }
         public int dodge { get; set; }
         public int health { get; set; }
-        public String name { get; set; }
-        public String action { get; set; }
+        public string name { get; set; }
+        public string action { get; set; }
         public bool complete = false;
+        public bool defending = false;
+        Skill[] skills;
+        public int damage { get; set; }
 
-        public Character() { 
-    
-        }
-
-        public void attack(Character character) {
+        public void attack(int d, int r, bool g, string n) {
             if (hit()) {
-
-            } else { 
-            
+                if (strength > magic) {
+                    damage = takeDamage(strength, d, g);
+                } else {
+                    damage = takeDamage(magic, r, g);
+                }
+                action = name + " hit " + n;
+            } else {
+                damage = 0;
+                action = name + " missed their attack!";
             }
+            complete = true;
         }
 
         public void defend() { 
-        
+            defending = true;
+            action = name + " is guarding.";
+            complete = true;
         }
 
         public void skill() { 
         
         }
 
-        public int takeDamage(int damage, Character target) {
-            return 0;
+        public int takeDamage(int damage, int defense, bool defending) {
+            if (defending) {
+                return damage / 2;
+            } else {
+                return damage;
+            }
         }
 
         public bool hit() { 

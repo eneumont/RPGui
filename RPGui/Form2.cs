@@ -116,7 +116,7 @@ namespace RPGui {
             fight1.dialogueOptions.Add(
                 "You b... (fight)",
                 null);
-            if(player.speed > 9) fight1.dialogueOptions.Add(
+            if(player.speed >= 9) fight1.dialogueOptions.Add(
                 "Throw knife",
                 fight2
                 );

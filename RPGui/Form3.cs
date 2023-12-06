@@ -12,15 +12,13 @@ using System.Windows.Forms;
 
 namespace RPGui {
     public partial class Form3 : Form {
-        Player player;
-        Enemy enemy;
-        Battle battle;
+        Battle b;
         public Form3(Player player, Enemy enemy) {
             InitializeComponent();
-            this.player = player;
-            this.enemy = enemy;
-            battle = new Battle(ref player, ref enemy);
+            b = new Battle(player, enemy);
             setup();
+            b.run();
+            updateText();
         }
 
         private void setup() { 
@@ -30,7 +28,7 @@ namespace RPGui {
         }
 
         private void playersetup() { 
-            switch(player.job) {
+            switch(b.player.job) {
                 case Job.Warrior:
                     pPlayer.Image = RPGui.Properties.Resources.warrior;
                     break;
@@ -53,7 +51,7 @@ namespace RPGui {
         }
 
         private void enemysetup() {
-            switch (enemy.species) {
+            switch (b.enemy.species) {
                 case Species.Jester:
                     pEnemy.Image = RPGui.Properties.Resources.jester;
                     break;
@@ -67,10 +65,15 @@ namespace RPGui {
         }
 
         private void uisetup() {
-            lPlayerAction.Text = player.action;
-            lEnemyAction.Text = enemy.action;
-            lPlayer.Text = player.name;
-            lEnemy.Text = enemy.name;
+            lPlayerAction.Text = b.player.action;
+            lEnemyAction.Text = b.enemy.action;
+            lPlayer.Text = b.player.name;
+            lEnemy.Text = b.enemy.name;
+            lPHealth.Text = b.player.health + "";
+            lEHealth.Text = b.enemy.health + "";
+            lPSpecial.Text = b.player.special + "";
+            gPHealth.Text = "Player Health/Special";
+            gEHealth.Text = "Enemy Health";
             gCommands.Text = "Command Menu";
             bAttack.Text = "Attack";
             bDefend.Text = "Defend";
@@ -81,12 +84,31 @@ namespace RPGui {
             gSkill3.Visible = false;
         }
 
+        private void updateText() {
+            lPlayerAction.Text = b.player.action;
+            lEnemyAction.Text = b.enemy.action;
+            lPlayer.Text = b.player.name;
+            lEnemy.Text = b.enemy.name;
+            lPHealth.Text = b.player.health + "";
+            lEHealth.Text = b.enemy.health + "";
+            lPSpecial.Text = b.player.special + "";
+        }
+
         private void bAttack_Click(object sender, EventArgs e) {
-            player.attack();
+            if (!b.done) {
+                b.player.attack(b.enemy.defense, b.enemy.resistance, b.enemy.defending, b.enemy.name);
+                b.enemy.health -= b.player.damage;
+            }
+            b.run();
+            updateText();
         }
 
         private void bDefend_Click(object sender, EventArgs e) {
-            player.defend();
+            if (!b.done) {
+                b.player.defend();
+            }
+            b.run();
+            updateText();
         }
 
         private void bSkill_Click(object sender, EventArgs e) {

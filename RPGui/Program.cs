@@ -13,7 +13,6 @@ namespace RPGui {
         static void Main() {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Form3(new GameStuff.Character.Player(GameStuff.Character.Job.Warrior), new GameStuff.Character.Enemy(GameStuff.Character.Species.Jester)));
             Application.Run(new Form1());
         }
     }

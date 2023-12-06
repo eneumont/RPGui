@@ -69,7 +69,6 @@
     <Compile Include="GameStuff\Character\Enemy.cs" />
     <Compile Include="GameStuff\Character\ICharacter.cs" />
     <Compile Include="GameStuff\Character\Item.cs" />
-    <Compile Include="GameStuff\Character\NonPlayableCharacter.cs" />
     <Compile Include="GameStuff\Character\Player.cs" />
     <Compile Include="GameStuff\Character\Skill.cs" />
     <Compile Include="GameStuff\Dialogue\Response.cs" />

@@ -7,39 +7,52 @@ using System.Threading.Tasks;
 
 namespace RPGui.GameStuff {
     internal class Battle {
-        public Player player { get; set; }
-        public Enemy enemy { get; set; }
-        public bool done { get; set; }
+        public Player player;
+        public Enemy enemy;
+        public bool done = false;
 
-        public Battle(ref Player player, ref Enemy enemy) {
+        public Battle(Player player, Enemy enemy) {
             this.player = player;
             this.enemy = enemy;
         }
 
         public void run() {
-            done = checkHealth();
-            while (!done) {
+            if (!done) {
                 if (player.speed > enemy.speed) {
-                    player.playerTurn();
-                    enemy.enemyTurn();
+                    if (!player.complete) player.playerTurn();
+                    if (!enemy.complete) enemy.enemyTurn(ref player);
                 } else if (enemy.speed > player.speed) {
-                    enemy.enemyTurn();
-                    player.playerTurn();
+                    if (!enemy.complete) enemy.enemyTurn(ref player);
+                    if (!player.complete) player.playerTurn();
                 } else {
                     Random r = new Random();
                     int first = r.Next(2);
                     switch (first) {
                         case 0:
-                            enemy.enemyTurn();
-                            player.playerTurn();
+                            if (!enemy.complete) enemy.enemyTurn(ref player);
+                            if (!player.complete) player.playerTurn();
                             break;
                         case 1:
-                            player.playerTurn();
-                            enemy.enemyTurn();
+                            if (!player.complete) player.playerTurn();
+                            if (!enemy.complete) enemy.enemyTurn(ref player);
                             break;
                     }
                 }
                 done = checkHealth();
+                if (player.complete && enemy.complete) {
+                    player.complete = false;
+                    player.defending = false;
+                    player.damage = 0;
+                    enemy.complete = false;
+                    enemy.defending = false;
+                    enemy.damage = 0;
+                }
+            } else { 
+                if (player.health <= 0) {
+                    player.action = player.name + " died! Try Again...";
+                } else {
+                    enemy.action = enemy.name + " died! You win!";
+                }
             }
         }
 

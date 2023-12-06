@@ -15,10 +15,9 @@ namespace RPGui.GameStuff.Character {
     }
 
     public class Player : Character {
-        int special { get; set; }
+        public int special { get; set; }
         public Job job { get; }
         Item[] inventory;
-        Skill[] skills;
         public Player(Job job) {
             this.job = job;
             setStats();
@@ -30,8 +29,8 @@ namespace RPGui.GameStuff.Character {
                     endurance = 2;
                     agility = 4;
                     luck = 3;
-                    health = 30;
-                    special = 20;
+                    health = 600;
+                    special = 50;
                     strength = might * 2;
                     magic = might;
                     defense = endurance;
@@ -45,8 +44,8 @@ namespace RPGui.GameStuff.Character {
                     endurance = 8;
                     agility = 3;
                     luck = 5;
-                    health = 30;
-                    special = 20;
+                    health = 700;
+                    special = 50;
                     strength = (int)(might * 1.5);
                     magic = might;
                     defense = endurance * 2;
@@ -60,8 +59,8 @@ namespace RPGui.GameStuff.Character {
                     endurance = 4;
                     agility = 10;
                     luck = 4;
-                    health = 30;
-                    special = 20;
+                    health = 400;
+                    special = 70;
                     strength = might;
                     magic = might;
                     defense = (int)(endurance * 1.5);
@@ -75,8 +74,8 @@ namespace RPGui.GameStuff.Character {
                     endurance = 4;
                     agility = 3;
                     luck = 3;
-                    health = 30;
-                    special = 20;
+                    health = 300;
+                    special = 100;
                     strength = might;
                     magic = might * 2;
                     defense = endurance;
@@ -90,8 +89,8 @@ namespace RPGui.GameStuff.Character {
                     endurance = 10;
                     agility = 4;
                     luck = 3;
-                    health = 30;
-                    special = 20;
+                    health = 500;
+                    special = 60;
                     strength = might;
                     magic = might;
                     defense = endurance;
@@ -105,8 +104,8 @@ namespace RPGui.GameStuff.Character {
                     endurance = 3;
                     agility = 9;
                     luck = 3;
-                    health = 30;
-                    special = 20;
+                    health = 400;
+                    special = 90;
                     strength = might;
                     magic = (int)(might * 1.5);
                     defense = endurance;
@@ -119,9 +118,14 @@ namespace RPGui.GameStuff.Character {
         }
 
         public void playerTurn() {
-            while (!complete) { 
-                
+            if (health <= 0) complete = true;
+            if (!complete) {
+                action = "It's " + name + "'s turn.";
             }
+        }
+
+        public void item() { 
+        
         }
     }
 }
