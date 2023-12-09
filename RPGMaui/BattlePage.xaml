@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RPGMaui.BattlePage"
+             Title="BattlePage">
+
+    <VerticalStackLayout>
+        <VerticalStackLayout>
+            <Label 
+                x:Name="lplayerAction"
+                Text="Player Action"
+            />
+            <Label
+                x:Name="lenemyAction"
+                Text="Enemy Action"
+            />
+        </VerticalStackLayout>
+        <HorizontalStackLayout Spacing="30">
+            <VerticalStackLayout>
+                <Label x:Name="lplayerName"/>
+                <Label x:Name="lplayerCondition"/>
+                <Image x:Name="iPlayer"/>
+            </VerticalStackLayout>
+            <VerticalStackLayout>
+                <Label x:Name="lenemyName"/>
+                <Label x:Name="lenemyCondition"/>
+                <Image x:Name="iEnemy"/>
+            </VerticalStackLayout>
+        </HorizontalStackLayout>
+        <HorizontalStackLayout>
+            <VerticalStackLayout>
+                <Button x:Name="bAttack" Text="Attack" Clicked="bAttack_Click"/>
+                <Button x:Name="bDefend" Text="Defend" Clicked="bDefend_Click"/>
+                <Button x:Name="bSkills" Text="Skills"/>
+                <Button x:Name="bItems" Text="Items"/>
+            </VerticalStackLayout>
+        </HorizontalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>

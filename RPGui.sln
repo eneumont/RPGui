@@ -5,7 +5,11 @@ VisualStudioVersion = 17.7.34221.43
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RPGui", "RPGui\RPGui.csproj", "{E75C8BB0-C2B9-49D3-AC55-19C3A2970076}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RPGMaui", "RPGMaui\RPGMaui.csproj", "{3A61E0CD-6C4D-4C8F-BCDB-08D80AE703B4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RPGMaui", "RPGMaui\RPGMaui.csproj", "{3A61E0CD-6C4D-4C8F-BCDB-08D80AE703B4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameLogics", "GameLogics\GameLogics.csproj", "{0D0D36C3-E42F-4667-BAF1-688927C6AB79}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rrr", "rrr\rrr.csproj", "{22C8C2DC-721B-4BED-AA9B-FC27AAA1DFD5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,6 +27,16 @@ Global
 		{3A61E0CD-6C4D-4C8F-BCDB-08D80AE703B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3A61E0CD-6C4D-4C8F-BCDB-08D80AE703B4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3A61E0CD-6C4D-4C8F-BCDB-08D80AE703B4}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{0D0D36C3-E42F-4667-BAF1-688927C6AB79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D0D36C3-E42F-4667-BAF1-688927C6AB79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D0D36C3-E42F-4667-BAF1-688927C6AB79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D0D36C3-E42F-4667-BAF1-688927C6AB79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22C8C2DC-721B-4BED-AA9B-FC27AAA1DFD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22C8C2DC-721B-4BED-AA9B-FC27AAA1DFD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22C8C2DC-721B-4BED-AA9B-FC27AAA1DFD5}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{22C8C2DC-721B-4BED-AA9B-FC27AAA1DFD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22C8C2DC-721B-4BED-AA9B-FC27AAA1DFD5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22C8C2DC-721B-4BED-AA9B-FC27AAA1DFD5}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

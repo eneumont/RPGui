@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace RPGui.GameStuff.Dialogue {
-    internal class Response {
+    public class Response {
         public string responseText { get; set; }
         public Dictionary<string, Response> dialogueOptions { get; set; }
 

@@ -1,5 +1,4 @@
-﻿using RPGui.GameStuff;
-using RPGui.GameStuff.Character;
+﻿using RPGui.GameStuff.Character;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

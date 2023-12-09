@@ -1,14 +1,15 @@
-﻿using System;
+﻿using RPGui.GameStuff.Character;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using RPGui.GameStuff.Character;
 
 namespace RPGui {
     public partial class Form1 : Form {
@@ -21,6 +22,7 @@ namespace RPGui {
 
         public void setup() {
             statChanges();
+            //l1.DataBindings.Add("Text", this, "mPoints", false, DataSourceUpdateMode.OnPropertyChanged);
             lmight.Text = "Might";
             lend.Text = "Endurance";
             lagl.Text = "Agility";
@@ -36,7 +38,7 @@ namespace RPGui {
             gb2.Text = "Stats";
             linfo.Text = "Pick a Job, tweak it's stats, then play!";
         }
-                
+
         public void statChanges() {
             l1.Text = mPoints.ToString();
             l2.Text = ePoints.ToString();

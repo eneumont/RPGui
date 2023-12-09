@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RPGui.GameStuff.Dialogue;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,7 @@ namespace RPGui.GameStuff.Character {
     }
     public class Enemy : Character {
         public Species species { get; set; }
+        public Response response { get; set; }
         public Enemy(Species species) { 
             this.species = species;
             setStats();

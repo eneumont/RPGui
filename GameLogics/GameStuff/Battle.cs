@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace RPGui.GameStuff {
-    internal class Battle {
+    public class Battle {
         public Player player;
         public Enemy enemy;
         public bool done = false;
